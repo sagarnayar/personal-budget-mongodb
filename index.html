@@ -15,11 +15,13 @@
 <body>
 
     <nav class="menu"> <!-- Change 1: Changed <div> to <nav> for navigation (Semantic) -->
-        <ul>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/pb/about.html">About</a></li>
-            <li><a href="/pb/login.html">Login</a></li>
-            <li><a href="https://google.com" target="_blank" rel="noopener">Google</a></li> <!-- Change 2: Added "target="_blank"" for external link (semantic)-->
+        <ul>   
+            <!-- This is an A11y changes 1-->
+            <li><a href="#content" tabindex="1">Scroll Down for the Main Content</a></li>
+            <li><a href="/pb" tabindex="2">Homepage</a></li>
+            <li><a href="/pb/about.html" tabindex="3">About</a></li>
+            <li><a href="/pb/login.html" tabindex="4">Login</a></li>
+            <li><a href="https://google.com" tabindex="5" target="_blank" rel="noopener">Google</a></li> <!-- Change 2: Added "target="_blank"" for external link (semantic)-->
         <!-- SEO Change 3: Added "rel" attribute to indicate external links and added "noopener" for better security -->
         </ul>
     
@@ -60,7 +62,8 @@
     
             <div class="text-box">
                 <h1>Free</h1>
-                <p>
+                <!-- This is A11y change 2 -->
+                <p role="alert">
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </div>
@@ -103,9 +106,15 @@
     </div>
 
     <footer class="bottom center"> <!-- Change 5: Changed <div> to <footer> for footer content -->
-        <!-- SEO Change 4: Added a  copyright notice for better SEO -->
+         <!--This is  A11y Change 3 -->
+         <div aria-label="Copyright Information">
+        <!-- SEO Change 4: Added a  copyright notice with my name for better SEO -->
         All rights reserved &copy; 2023 Personal Budget Management  @Sagar Nayar
     </footer>
+
+    <!-- This is A11y Change 4:-->
+    <button aria-describedby="info-tooltip">More Info</button>
+    <div id="info-tooltip" role="tooltip">Click here to view more information.</div>
 
 </body>
 </html>
