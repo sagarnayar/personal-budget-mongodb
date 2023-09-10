@@ -70,7 +70,7 @@ header.hero h2 {
     padding: 40px;
     width: 100%;
 }
-main.page-area {
+.page-area {
     max-width: 768px;
     display: inline-block;
 }
@@ -85,7 +85,7 @@ main.page-area {
     text-align: center;
 }
 
-.container div.text-box {
+.container article.text-box {
     display: inline-block;
     width: 100%;
     max-width: 340px;
@@ -94,7 +94,26 @@ main.page-area {
 }
 
 @media screen and (min-width: 768px) {
-    .container .div.text-box {
+    .container .article.text-box {
         margin: 10px;
     }
+}
+footer.bottom {
+    background-color: #333; 
+    color: #fff; 
+    padding: 20px; 
+    text-align: center; 
+}
+footer.bottom div.center {
+    font-size: 14px; 
+}
+footer.bottom div.center::before {
+    content: "\00a9"; 
+    margin-right: 5px; 
+}
+a:focus, button:focus {
+    outline: 2px solid #4d5791; 
+}
+input:focus, textarea:focus, select:focus {
+    outline: 2px solid #4d5791; 
 }
