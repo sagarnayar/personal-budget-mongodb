@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <nav class="menu"> <!-- Change 1: Changed <div> to <nav> for navigation (Semantic) -->
+    <nav class="menu" role="navigation"> <!-- Change 1: Changed <div> to <nav> for navigation (Semantic) -->
         <ul>   
             <!-- This is an A11y changes 1-->
             <li><a href="#content" tabindex="1">Scroll Down for the Main Content</a></li>
@@ -27,9 +27,9 @@
     
     </nav>
 
-    <header class="hero"> <!-- Change 3: Changed <div> to <header> for header content (semantic) -->
-        <h1>Personal Budget</h1>
-        <h2>A personal-budget management app</h2>
+    <header class="hero" role="banner"> <!-- Change 3: Changed <div> to <header> for header content (semantic) -->
+        <h1 tabindex="6">Personal Budget</h1>
+        <h2 tabindex="7">A personal-budget management app</h2>
     </header>
 
     <div class="container center">
@@ -63,7 +63,7 @@
             <div class="text-box">
                 <h1>Free</h1>
                 <!-- This is A11y change 2 -->
-                <p role="alert">
+                <p role="status">
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </div>
@@ -96,7 +96,8 @@
     
             <div class="text-box">
                 <h1>Free</h1>
-                <p>
+                <p role="status">
+                    This app is free!!! And you are the only one holding your data!>
                     This app is free!!! And you are the only one holding your data!
                 </p>
             </div>
