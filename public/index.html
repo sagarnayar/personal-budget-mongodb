@@ -33,7 +33,7 @@
         <h2 tabindex="7">A personal-budget management app</h2>
     </header>
 
-    <div class="container center">
+    <div class="container">
         <main class="page-area"> <!--This is Semantic Change 4-->
 
             <div class="text-box">
@@ -99,7 +99,8 @@
             <div class="text-box">
                 <h1>Free</h1>
                 <p>
-                   <canvas id="myChart" width="10" height="10"></canvas>
+                    <canvas id="myChart" width="400" height="400" style="width: 400px; height: 400px;"></canvas>
+
                 </p>
             </div>
 
@@ -146,7 +147,11 @@
             var ctx = document.getElementById("myChart").getContext("2d");
             var myPieChart = new Chart(ctx,  {
                 type:'pie',
-                data:dataSource
+                data:dataSource,
+                options: {
+        responsive: false, // Disable responsiveness
+        maintainAspectRatio: false, // Disable aspect ratio 
+                },
             });
         }
 
