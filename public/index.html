@@ -124,7 +124,7 @@
             </article>
 
             <article class="text-box">
-                <h1 tabindex="26">D3JS Donut Chart © Sagar  </h1>
+                <h1 tabindex="26">Donut Chart © Sagar  </h1>
                 <p tabindex="27">
                 <div id="d3DonutChart"></div>
                 </p>
@@ -179,7 +179,7 @@
             var ctx = document.getElementById("myChart").getContext("2d");
 
             if (window.myPieChart) {
-                window.myPieChart.destroy(); // Destroy the previous chart
+                window.myPieChart.destroy(); 
             }  
 
 
@@ -187,8 +187,8 @@
                 type:'pie',
                 data:dataSource,
                 options: {
-        responsive: false, // Disable responsiveness
-        maintainAspectRatio: false, // Disable aspect ratio 
+        responsive: false, 
+        maintainAspectRatio: false,  
                 },
             });
         }
