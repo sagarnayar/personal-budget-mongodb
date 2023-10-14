@@ -45,7 +45,7 @@ app.post("/api/items", (req, res) => {
   .then(() => {
     console.log("Connected to the database");
     const newItem = new budgetModel(req.body);
-    budgetModel.create(newItem) // Use create to insert a single item
+    budgetModel.create(newItem) 
       .then((data) => {
         res.json(data);
         console.log(data);
