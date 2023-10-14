@@ -14,7 +14,6 @@ const budgetSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function (value) {
-                // Use a regular expression to check for a valid hexadecimal color code
                 return /^#[0-9A-Fa-f]{6}$/.test(value);
             },
             message: "Color must be a valid hexadecimal color code (e.g., #ED4523)",
