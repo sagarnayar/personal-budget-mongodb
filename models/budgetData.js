@@ -1,19 +1,25 @@
-const mongoose = require("mongoose")
-let url = 'mongodb://127.0.0.1:27017';
+const mongoose = require("mongoose");
 
 const budgetSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
     },
-    budget:{
+    budget: {
         type: Number,
         required: true,
     },
-    color:{
+    color: {
         type: String,
         required: true,
-    }
-}, { collection: 'budgetData'})
+        validate: {
+            validator: function (value) {
+                // Use a regular expression to check for a valid hexadecimal color code
+                return /^#[0-9A-Fa-f]{6}$/.test(value);
+            },
+            message: "Color must be a valid hexadecimal color code (e.g., #ED4523)",
+        },
+    },
+}, { collection: 'budgetData' });
 
-module.exports = mongoose.model('budgetData', budgetSchema)
+module.exports = mongoose.model('budgetData', budgetSchema);
