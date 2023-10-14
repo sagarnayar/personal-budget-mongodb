@@ -15,7 +15,7 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use("/", express.static("public"));
 
-app.get("/budget", (req, res) => {
+app.get("/items", (req, res) => {
   mongoose.connect("mongodb://127.0.0.1:27017/budgetApp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -37,7 +37,7 @@ app.get("/budget", (req, res) => {
   });
 });
 
-app.post("/api/items", (req, res) => {
+app.post("/items", (req, res) => {
   mongoose.connect("mongodb://127.0.0.1:27017/budgetApp", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -53,10 +53,12 @@ app.post("/api/items", (req, res) => {
       })
       .catch((connectionError) => {
         console.error(connectionError);
+        res.status(400).json({error:'Internal Server error-Validation failed'})
       });
   })
   .catch((err) => {
     console.error(err);
+    res.status(400).json({error:'Internal Server error'})
   });
 });
 
